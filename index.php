@@ -12,7 +12,7 @@ session_start();
 <body>
 
     <?php
-    require "login.php"
+   include "login.php"
     ?>
     
 </body>

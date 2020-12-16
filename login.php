@@ -1,5 +1,4 @@
 <?php 
-var_dump($_SESSION);
 require_once 'connect.php'
 // require 'header_client.php';
  ?>
