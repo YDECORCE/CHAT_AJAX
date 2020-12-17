@@ -18,4 +18,13 @@ function addapost($id,$message)
     $req->bindParam(':post', $message, PDO::PARAM_STR);
     $req->execute();
 }
+
+function Whosconnected()
+{
+    $dbb=connect();
+    $req=$dbb->prepare('SELECT * FROM `users` WHERE `Connected`=1');
+    $req->execute();
+    $allconnected = $req ->fetchAll();
+    echo json_encode($allconnected);
+}
 ?>

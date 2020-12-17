@@ -5,18 +5,23 @@ require_once 'connect.php'
 
 
 <div class="container-fluid bg">
-    <div class="container bgblanc">
-        <h1> Se connecter </h1>
+<div class="row w-100 justify-content-center h-25 align-items-center">
+    <h1>Papy's Chat</h1>    
+</div>
+<div class="row w-100 justify-content-center h-50">
+<div class="bgblanc">
+        <h2> Se connecter </h2>
         <div class="row w-100 justify-content-center mx-0">
-            <div class="col-12 col-lg-8 d-flex justify-content-center w-100" style="flex-wrap:wrap">
+            <div class="col-12 d-flex justify-content-center w-100" style="flex-wrap:wrap">
                 <form class="w-100" action="" method="POST">
                     <div class="form-group">
                         <label for=""> Pseudo</label>
                         <input type="text" name="username" class="form-control" />
                     </div>
-                    <div class="form-group"> <label for=""> mot de passe
+                    <div class="form-group"> <label for=""> Mot de passe
                         </label> <input type="password" name="password" class="form-control" />
-                    </div> <button type="submit" class="btn btn_jaune">Se connecter </button>
+                    </div> 
+                    <button type="submit" class="btn btn-primary">Se connecter </button>
                 </form>
                 <div>
                     <?php 
@@ -30,6 +35,9 @@ require_once 'connect.php'
                         $_SESSION['Login']=$user['Login_Users'];
                         $_SESSION['nom']=$user['Name_Users'];
                         $_SESSION['ID_user']=$user['ID_Users'];
+                        $dbb=connect();
+                        $req=$dbb->prepare('UPDATE `users` SET `Connected`=1 WHERE `ID_Users`=:users');
+                        $req->execute(['users' => $_SESSION['ID_user']]);
                             header('location: chat.php');
                             exit;
                     }
@@ -43,5 +51,6 @@ require_once 'connect.php'
         </div>
     </div>
 </div>
+            </div>
 <?php
 // require 'footer.php'; ?>

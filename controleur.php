@@ -14,3 +14,6 @@ if(isset($_GET['action'])&&($_GET['action']=='send')){
     readallpost();
  }
 
+ if(isset($_GET['action'])&&($_GET['action']=='connected')){
+   Whosconnected();
+}
