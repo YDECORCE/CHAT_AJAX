@@ -83,9 +83,14 @@ function AfficherConnected(){
             titre.textContent="Ils sont sur le Chat..."
             WhoConnect.appendChild(titre);
             for(var i=0; i<resultat.length;i++){
-                var avatar=document.createElement("div")
+                var avatar=document.createElement("div");
                 avatar.classList="pseudo";
-                avatar.textContent=resultat[i].Name_Users;
+                var image=document.createElement("img");
+                image.src=resultat[i].Avatar_Users;
+                avatar.appendChild(image);
+                var nom=document.createElement("h4");
+                nom.textContent=resultat[i].Name_Users;
+                avatar.appendChild(nom);
                 WhoConnect.appendChild(avatar);
             }
         }
