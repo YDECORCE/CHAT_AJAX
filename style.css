@@ -1,20 +1,23 @@
-.chat{
+
+.user{
     width: 60%;
     min-height : 40px;
     border-radius: 20px;
     padding : 5px 10px 5px 10px;
     margin : 5px 0px 5px 0px;
-}
+    color: white;
+    background-color: rgba(6, 119, 224, 0.75);
+    float:left;
 
-.user{
-background-color: rgba(6, 119, 224, 0.75);
-float:left;
-color: white;
 }
 .other{
-    background-color:rgba(0, 43, 184, 0.9);
-    float: right;
+    /* background-color:rgba(0, 43, 184, 0.9); */
+    min-height : 40px;
+    border-radius: 20px;
+    padding : 5px 10px 5px 10px;
+    margin : 5px 0px 5px 0px;
     color: white;
+    width:100%;  
         
 }
 .messages{
@@ -50,6 +53,7 @@ h4{
     padding-left: 20px;
 }
 h1{
+    padding-top: 50px;
     text-align: center;
 }
 .connected{
@@ -65,7 +69,22 @@ h1{
     text-align: center;
     display: flex;
 }
-
+.NameOtherUser{
+    font-size: 0.75rem;
+    color:grey;
+}
+.BodyOtherMessage{
+    display: flex;
+}
+.Avatar{
+    width:30px;
+    height:30px;
+}
+.DatePost{
+    float:right;
+    font-size: 0.75rem;
+    color:grey;
+}
 ::-webkit-scrollbar {
     width:12px;
     height:6px;

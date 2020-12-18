@@ -56,12 +56,32 @@ function AfficherMessage(){
                 var ligne=document.createElement("div")
                                 
                 if(affichage[i].ID_Users==IdSession){
-                    ligne.classList="chat user";
+                    ligne.classList="user";
                     ligne.textContent=affichage[i].Date_Chat.substring(11,16)+" : "+affichage[i].Message_chat
                 }
                 else{
-                    ligne.classList="chat other"
-                    ligne.textContent=affichage[i].Name_Users+" a écrit : "+affichage[i].Message_chat+" à "+affichage[i].Date_Chat.substring(11,16)
+                    ligne.style.width="60%";
+                    ligne.style.float="right";
+                    var pseudo=document.createElement("div");
+                    pseudo.classList="NameOtherUser";
+                    pseudo.textContent=affichage[i].Name_Users+" a écrit :";
+                    ligne.append(pseudo);
+                    var CorpsMessage=document.createElement("div");
+                    CorpsMessage.classList="BodyOtherMessage";
+                    ligne.append(CorpsMessage);
+                    var avatar=document.createElement("img");
+                    avatar.src=resultat[i].Avatar_Users;
+                    avatar.classList="Avatar";
+                    CorpsMessage.append(avatar);
+                    var Message=document.createElement("div");
+                    Message.classList="other"
+                    Message.style.backgroundColor=affichage[i].Color;
+                    Message.textContent=affichage[i].Message_chat;
+                    CorpsMessage.append(Message);
+                    var DatePost=document.createElement("div");
+                    DatePost.classList="DatePost";
+                    DatePost.textContent=affichage[i].Date_Chat.substring(11,16);
+                    ligne.append(DatePost);
                 }
                 
                 AllPosts.append(ligne)

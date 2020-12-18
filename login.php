@@ -30,7 +30,6 @@ require_once 'connect.php'
                     $req=$dbb->prepare('SELECT * FROM users WHERE Login_Users= :username ');
                     $req->execute(['username' => $_POST['username']]);
                     $user = $req ->fetch();
-                    var_dump($user);
                     if($_POST['password']==$user["MDP_Users"]){
                         $_SESSION['Login']=$user['Login_Users'];
                         $_SESSION['nom']=$user['Name_Users'];

@@ -4,7 +4,7 @@ require_once 'connect.php';
 function readallpost()
 {
     $dbb=connect();
-    $req=$dbb->prepare('SELECT Date_Chat, Message_chat, Name_Users, ID_Users FROM chat INNER JOIN users ON chat.users_id_users=users.ID_Users ORDER BY Date_Chat DESC LIMIT 20');
+    $req=$dbb->prepare('SELECT Date_Chat, Message_chat, Name_Users, ID_Users, Color, Avatar_Users FROM chat INNER JOIN users ON chat.users_id_users=users.ID_Users ORDER BY Date_Chat DESC LIMIT 20');
     $req->execute();
     $allpost = $req ->fetchAll();
     echo json_encode($allpost);

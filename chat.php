@@ -31,8 +31,7 @@ if(!isset($_SESSION['nom'])){
                 <div id="logout" class="h-25">
                     <?php echo $_SESSION['nom']." est connecté(e)"?>
                     <form action="" method="POST">
-                        <button class="btn btn-warning" type="submit" name='action' value='logout' id="logout">Log
-                            Out</button>
+                        <button class="btn btn-warning" type="submit" name='action' value='logout' id="logout">Log Out</button>
                     </form>
                 </div>
                 </div>
